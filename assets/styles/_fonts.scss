@@ -1,0 +1,43 @@
+$font-url: '../fonts';
+$font: 'proxima';
+$font-name: 'Proxima';
+$font-type: 'otf' ;
+$font-format: 'opentype' ;
+
+@font-face {
+  font-family: '#{$font}';
+  src: url("#{$font-url}/#{$font}/#{$font-name}NovaRegular.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font}-bold';
+  src: url("#{$font-url}/#{$font}/#{$font-name}NovaBold.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font}-light';
+  src: url("#{$font-url}/#{$font}/#{$font-name}NovaLight.#{$font-type}") format($font-format);
+}
+
+@mixin font ($type: ''){
+  @if ($type == '') {
+    font-family:  '#{$font}' !important;
+  } @else {
+    font-family:  '#{$font}-#{$type}' !important;
+  }
+
+}
+
+
+.font-light {
+  font-family: '#{$font}-light' !important;
+}
+
+.font-bold {
+  font-family: '#{$font}-bold' !important;
+}
+
+.font-regular {
+  font-family: '#{$font}' !important;
+}
+
